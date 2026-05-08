@@ -1,16 +1,50 @@
-# React + Vite
+# ✈️ AeroCode - Sistema de Gerenciamento de Fábrica de Aeronaves
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web moderna desenvolvida em React para o gerenciamento completo de uma fábrica de aeronaves. O sistema permite o controle de inventário de peças, delegação de funcionários em etapas de produção e geração de relatórios técnicos de entrega.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Autenticação Segura: Sistema de login com diferentes níveis de acesso (Administrador, Engenheiro e Operador).
 
-## React Compiler
+Gestão de Ativos: Cadastro e listagem de aeronaves comerciais e militares.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Controle de Peças: Monitoramento de peças nacionais e importadas com status de produção e transporte.
 
-## Expanding the ESLint configuration
+Linha de Produção: Acompanhamento de etapas (Montagem, Instalação, Pintura) com atribuição de funcionários responsáveis.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Módulo de Testes: Registro de testes elétricos, hidráulicos e aerodinâmicos com aprovação de segurança.
+
+Relatórios Automatizados: Geração de pré-visualização gráfica e exportação de relatório final em formato .txt.
+
+## 🛠️ Tecnologias Utilizadas
+
+React.js (Frontend)
+
+Vite (Build tool e servidor de desenvolvimento)
+
+Node.js 24.14.1 (Ambiente de execução)
+
+CSS3 / Flexbox (Layout personalizado com paleta pastel e sidebar dark)
+
+Lucide React (Ícones da interface)
+
+## 📦 Como rodar o projeto
+
+### Pré-requisitos
+Você precisará ter o Node.js (recomendado versão 24.14.1) instalado em sua máquina.
+
+### Instalação
+Clone o repositório:
+
+git clone https://github.com/giotrzz/AV2-TP1.git
+
+Entre na pasta do projeto:
+
+cd AV2-TP1
+
+Instale as dependências:
+
+npm install
+
+### Execução 
+npm run dev
