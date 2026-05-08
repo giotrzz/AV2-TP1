@@ -1,8 +1,3 @@
-// ─────────────────────────────────────────────
-//  pages/Relatorio.jsx
-//  Gera e exibe o relatório final de entrega
-//  Permite baixar como arquivo .txt
-// ─────────────────────────────────────────────
 
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
@@ -18,12 +13,10 @@ export default function Relatorio() {
   const [dataEntrega,    setDataEntrega]    = useState('')
   const [gerado,         setGerado]         = useState(false)
 
-  // Aeronave selecionada
   const aeronave = aeronaves.find((a) => a.codigo === codigoAeronave)
 
   const podeGerar = temPermissao('ADMINISTRADOR', 'ENGENHEIRO')
 
-  // Gera o texto do relatório no formato do CLI original
   function gerarTexto() {
     if (!aeronave) return ''
     const sep  = '='.repeat(62)
@@ -82,7 +75,6 @@ export default function Relatorio() {
     return linhas.join('\n')
   }
 
-  // Faz o download do arquivo .txt
   function baixarTxt() {
     const texto = gerarTexto()
     const blob  = new Blob([texto], { type: 'text/plain' })

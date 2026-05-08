@@ -1,6 +1,3 @@
-/// ─────────────────────────────────────────────
-//  Sidebar.jsx — Versão Industrial Gray
-// ─────────────────────────────────────────────
 
 import { useApp } from '../context/AppContext'
 
@@ -21,7 +18,7 @@ export default function Sidebar({ paginaAtual, onNavegar }) {
       style={{
         width: '210px',
         minHeight: '100vh',
-        backgroundColor: '#1a1a1a', // Cinza quase preto
+        backgroundColor: '#1a1a1a', 
         display: 'flex',
         flexDirection: 'column',
         flexShrink: 0,
@@ -53,10 +50,10 @@ export default function Sidebar({ paginaAtual, onNavegar }) {
                 alignItems: 'center',
                 gap: '12px',
                 padding: '12px 20px',
-                background: ativo ? '#333333' : 'none', // Cinza médio para item ativo
+                background: ativo ? '#333333' : 'none', 
                 border: 'none',
-                borderLeft: ativo ? '4px solid #9e9e9e' : '4px solid transparent', // Indicador cinza claro
-                color: ativo ? '#ffffff' : '#888888', // Branco para ativo, cinza fosco para inativo
+                borderLeft: ativo ? '4px solid #9e9e9e' : '4px solid transparent', 
+                color: ativo ? '#ffffff' : '#888888', 
                 fontSize: '13px',
                 fontWeight: ativo ? '600' : '500',
                 cursor: 'pointer',
@@ -80,7 +77,7 @@ export default function Sidebar({ paginaAtual, onNavegar }) {
             style={{
               width: '36px',
               height: '36px',
-              borderRadius: '8px', // Avatar quadradinho fica mais industrial
+              borderRadius: '8px', 
               backgroundColor: '#444',
               display: 'flex',
               alignItems: 'center',

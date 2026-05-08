@@ -1,8 +1,3 @@
-// ─────────────────────────────────────────────
-//  pages/Aeronaves.jsx
-//  Lista aeronaves + modal de cadastro
-//  + tela de detalhe com abas (peças, etapas, testes)
-// ─────────────────────────────────────────────
 
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
@@ -11,7 +6,6 @@ import Modal from '../components/Modal'
 import Campo from '../components/Campo'
 import Botao from '../components/Botao'
 
-// ── Formulário de nova aeronave ──────────────
 function FormNovaAeronave({ onFechar }) {
   const { adicionarAeronave, aeronaves } = useApp()
 
@@ -23,7 +17,7 @@ function FormNovaAeronave({ onFechar }) {
   const [erro,       setErro]       = useState('')
 
   function salvar() {
-    // Validações simples
+
     if (!codigo || !modelo || !capacidade || !alcance) {
       setErro('Preencha todos os campos.')
       return
@@ -68,7 +62,6 @@ function FormNovaAeronave({ onFechar }) {
   )
 }
 
-// ── Detalhe de uma aeronave ──────────────────
 function DetalheAeronave({ aeronave, onVoltar }) {
   const [aba, setAba] = useState('pecas')
 
@@ -85,7 +78,7 @@ function DetalheAeronave({ aeronave, onVoltar }) {
         onClick={onVoltar}
         style={{ background: 'none', border: 'none', color: '#3b82f6', cursor: 'pointer', fontSize: '13px', marginBottom: '16px', fontFamily: 'inherit' }}
       >
-        ← Voltar para aeronaves
+
       </button>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
@@ -140,7 +133,6 @@ function DetalheAeronave({ aeronave, onVoltar }) {
   )
 }
 
-// ── Tabela de peças no detalhe ───────────────
 function TabelaPecas({ aeronave }) {
   const { adicionarPeca, atualizarStatusPeca, temPermissao } = useApp()
   const [modalAberto, setModalAberto] = useState(false)
@@ -222,7 +214,6 @@ function TabelaPecas({ aeronave }) {
   )
 }
 
-// ── Tabela de etapas no detalhe ──────────────
 function TabelaEtapas({ aeronave }) {
   const { adicionarEtapa, atualizarStatusEtapa, temPermissao } = useApp()
   const [modalAberto, setModalAberto] = useState(false)
@@ -243,7 +234,6 @@ function TabelaEtapas({ aeronave }) {
 
   const podeEditar = temPermissao('ADMINISTRADOR', 'ENGENHEIRO')
 
-  // Lógica de transição de status
   function proximoStatus(statusAtual) {
     if (statusAtual === 'PENDENTE')  return 'ANDAMENTO'
     if (statusAtual === 'ANDAMENTO') return 'CONCLUIDA'
@@ -311,7 +301,6 @@ function TabelaEtapas({ aeronave }) {
   )
 }
 
-// ── Tabela de testes no detalhe ──────────────
 function TabelaTestes({ aeronave }) {
   const { adicionarTeste, temPermissao } = useApp()
   const [modalAberto, setModalAberto] = useState(false)
@@ -373,15 +362,14 @@ function TabelaTestes({ aeronave }) {
   )
 }
 
-// ── Página principal de Aeronaves ────────────
+
 export default function Aeronaves() {
   const { aeronaves, temPermissao } = useApp()
   const [modalAberto,      setModalAberto]      = useState(false)
   const [aeronaveDetalhe,  setAeronaveDetalhe]  = useState(null)
 
-  // Se clicou numa aeronave, mostra o detalhe
   if (aeronaveDetalhe) {
-    // Busca a versão atualizada da aeronave (pode ter mudado)
+
     const aeronaveAtual = aeronaves.find((a) => a.codigo === aeronaveDetalhe.codigo)
     return (
       <DetalheAeronave

@@ -1,8 +1,4 @@
-// ─────────────────────────────────────────────
-//  Campo.jsx — campo de formulário reutilizável
-//  Junta o <label> e o <input> (ou <select>)
-//  num único componente para não repetir código.
-// ─────────────────────────────────────────────
+
 
 export default function Campo({ label, tipo = 'text', valor, onChange, opcoes, placeholder }) {
   const estiloLabel = {

@@ -1,21 +1,10 @@
-// ─────────────────────────────────────────────
-//  AppContext.jsx
-//
-//  Aqui guardamos o "estado global" da aplicação:
-//  quem está logado, quais aeronaves existem, etc.
-//
-//  Usamos a Context API do React para que qualquer
-//  componente possa ler e alterar esses dados sem
-//  ficar passando props por vários níveis.
-// ─────────────────────────────────────────────
+
 
 import { createContext, useContext, useState } from 'react'
 import { funcionariosIniciais, aeronavesIniciais } from '../data/dados'
 
-// 1. Cria o "contexto" (uma espécie de variável global)
 const AppContext = createContext()
 
-// 2. Provider: envolve a aplicação e disponibiliza os dados
 export function AppProvider({ children }) {
   const [usuarioLogado, setUsuarioLogado] = useState(null)
   const [funcionarios, setFuncionarios] = useState(funcionariosIniciais)
@@ -37,17 +26,14 @@ export function AppProvider({ children }) {
     setUsuarioLogado(null)
   }
 
-  // ── Funcionários ──────────────────────────────
   function adicionarFuncionario(novoFuncionario) {
     setFuncionarios((lista) => [...lista, novoFuncionario])
   }
 
-  // ── Aeronaves ─────────────────────────────────
   function adicionarAeronave(novaAeronave) {
     setAeronaves((lista) => [...lista, novaAeronave])
   }
 
-  // ── Peças ─────────────────────────────────────
   function adicionarPeca(codigoAeronave, novaPeca) {
     setAeronaves((lista) =>
       lista.map((a) =>
@@ -73,7 +59,6 @@ export function AppProvider({ children }) {
     )
   }
 
-  // ── Etapas ────────────────────────────────────
   function adicionarEtapa(codigoAeronave, novaEtapa) {
     setAeronaves((lista) =>
       lista.map((a) =>
@@ -116,7 +101,6 @@ export function AppProvider({ children }) {
     )
   }
 
-  // ── Testes ────────────────────────────────────
   function adicionarTeste(codigoAeronave, novoTeste) {
     setAeronaves((lista) =>
       lista.map((a) =>
@@ -127,13 +111,11 @@ export function AppProvider({ children }) {
     )
   }
 
-  // ── Helper: verificar permissão ───────────────
   function temPermissao(...niveis) {
     if (!usuarioLogado) return false
     return niveis.includes(usuarioLogado.nivelPermissao)
   }
 
-  // Tudo que fica disponível para os componentes
   return (
     <AppContext.Provider
       value={{
@@ -158,9 +140,6 @@ export function AppProvider({ children }) {
   )
 }
 
-// 3. Hook personalizado — facilita o uso nos componentes
-//    Em vez de: const ctx = useContext(AppContext)
-//    Basta:     const { login, aeronaves } = useApp()
 export function useApp() {
   return useContext(AppContext)
 }

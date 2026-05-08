@@ -1,8 +1,4 @@
-// ─────────────────────────────────────────────
-//  pages/Etapas.jsx
-//  Lista todas as etapas de todas as aeronaves
-//  Permite iniciar, finalizar e associar funcionários
-// ─────────────────────────────────────────────
+
 
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'

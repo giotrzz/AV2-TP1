@@ -1,7 +1,4 @@
-// ─────────────────────────────────────────────
-//  pages/Testes.jsx
-//  Lista todos os testes de todas as aeronaves
-// ─────────────────────────────────────────────
+
 
 import { useApp } from '../context/AppContext'
 import Badge from '../components/Badge'

@@ -1,15 +1,11 @@
-// ─────────────────────────────────────────────
-//  dados.js — dados iniciais da aplicação
-//  Estes dados simulam o que viria de um banco
-//  de dados ou arquivo JSON no backend.
-// ─────────────────────────────────────────────
+
 
 export const funcionariosIniciais = [
   {
     id: 'F0001',
     nome: 'Administrador',
     telefone: '(12) 99999-0000',
-    endereco: 'Sede AeroCode, São José dos Campos',
+    endereco: 'Rua 99, São José dos Campos',
     usuario: 'admin',
     // senha: admin123
     senhaHash: 'admin123',
@@ -17,19 +13,19 @@ export const funcionariosIniciais = [
   },
   {
     id: 'F0002',
-    nome: 'Maria Silva',
-    telefone: '(11) 98888-1234',
-    endereco: 'Rua das Turbinas, 42 - SP',
-    usuario: 'm.silva',
+    nome: 'Gerson',
+    telefone: '(11) 9384-3452',
+    endereco: 'Rua tbm n sei, 42 - SP',
+    usuario: 'g.penha',
     senhaHash: 'eng123',
     nivelPermissao: 'ENGENHEIRO',
   },
   {
     id: 'F0003',
-    nome: 'João Pereira',
-    telefone: '(21) 97777-5678',
-    endereco: 'Av. Aeroporto, 100 - RJ',
-    usuario: 'j.pereira',
+    nome: 'Gioavna',
+    telefone: '(xx) 35465-5657',
+    endereco: 'Av. sei la, 100 - sp',
+    usuario: 'g.tarozo',
     senhaHash: 'op123',
     nivelPermissao: 'OPERADOR',
   },

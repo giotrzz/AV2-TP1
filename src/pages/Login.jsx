@@ -1,6 +1,3 @@
-// ─────────────────────────────────────────────
-//  pages/Login.jsx — tela de login
-// ─────────────────────────────────────────────
 
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
@@ -21,8 +18,7 @@ export default function Login() {
     if (!sucesso) {
       setErro('Usuário ou senha incorretos.')
     }
-    // Se sucesso, o App.jsx vai detectar que usuarioLogado mudou
-    // e vai renderizar o AppLogado automaticamente
+
   }
 
   return (

@@ -1,8 +1,4 @@
-// ─────────────────────────────────────────────
-//  pages/Funcionarios.jsx
-//  Lista funcionários e permite cadastrar novos
-//  (só ADMINISTRADOR pode cadastrar)
-// ─────────────────────────────────────────────
+
 
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
@@ -15,7 +11,6 @@ export default function Funcionarios() {
   const { funcionarios, adicionarFuncionario, temPermissao } = useApp()
   const [modalAberto, setModalAberto] = useState(false)
 
-  // Campos do formulário
   const [nome,    setNome]    = useState('')
   const [tel,     setTel]     = useState('')
   const [end,     setEnd]     = useState('')
@@ -37,21 +32,18 @@ export default function Funcionarios() {
     adicionarFuncionario({
       id: `F${Date.now()}`,
       nome, telefone: tel, endereco: end,
-      usuario, senhaHash: senha, // em produção usaria hash SHA-256
+      usuario, senhaHash: senha, 
       nivelPermissao: nivel,
     })
 
-    // Limpa o formulário
     setNome(''); setTel(''); setEnd(''); setUsuario(''); setSenha(''); setErro('')
     setModalAberto(false)
   }
 
-  // Gera as iniciais do nome para o avatar
   function iniciais(nome) {
     return nome.split(' ').map((n) => n[0]).slice(0, 2).join('').toUpperCase()
   }
 
-  // Cores de avatar por nível
   const coresAvatar = {
     ADMINISTRADOR: { bg: '#dbeafe', cor: '#1d4ed8' },
     ENGENHEIRO:    { bg: '#dcfce7', cor: '#166534' },

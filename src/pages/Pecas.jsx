@@ -1,7 +1,4 @@
-// ─────────────────────────────────────────────
-//  pages/Pecas.jsx
-//  Lista todas as peças de todas as aeronaves
-// ─────────────────────────────────────────────
+
 
 import { useApp } from '../context/AppContext'
 import Badge from '../components/Badge'
@@ -9,7 +6,6 @@ import Badge from '../components/Badge'
 export default function Pecas() {
   const { aeronaves, atualizarStatusPeca, temPermissao } = useApp()
 
-  // Junta todas as peças com referência à aeronave
   const todasPecas = aeronaves.flatMap((a) =>
     a.pecas.map((p) => ({ peca: p, aeronave: a }))
   )

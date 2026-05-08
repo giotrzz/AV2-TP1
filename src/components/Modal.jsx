@@ -1,12 +1,4 @@
-// ─────────────────────────────────────────────
-//  Modal.jsx — janela flutuante (popup)
-//
-//  Recebe:
-//    aberto    → true/false para mostrar/esconder
-//    onFechar  → função chamada ao clicar em fechar
-//    titulo    → texto do cabeçalho
-//    children  → conteúdo dentro do modal
-// ─────────────────────────────────────────────
+
 
 export default function Modal({ aberto, onFechar, titulo, children }) {
   // Se não estiver aberto, não renderiza nada
